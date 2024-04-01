@@ -7,6 +7,7 @@ const idLength = 8;
 router.get('/', (req,res) => {
 
     let todos = req.app.db.get('todos').value();
+    cnosole.log(process.env.TEST); 
 
     return res.send(todos);
 
