@@ -23,6 +23,10 @@ app.use(cors());
 app.use('/todos',todoRouter);
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(docs));
 
+app.get('/', (req, res) => {
+    return res.send(`hello world TEST=${process.env.TEST}, TEST=${process.env.TEST2}, TEST=${process.env.TEST3}`)
+});
+
 //initialize the app.
 async function initialize(){    
     app.listen(PORT);
